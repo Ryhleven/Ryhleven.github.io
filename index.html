@@ -42,7 +42,7 @@
             width: 1280px;
         }
 
-        /* Ambient Background Background */
+        /* Ambient Background Grid Background */
         .slide-container::before {
             content: '';
             position: absolute;
@@ -52,16 +52,16 @@
             height: 100%;
             background: radial-gradient(circle at 10% 10%, rgba(217, 255, 0, 0.05) 0%, transparent 50%),
                         radial-gradient(circle at 90% 90%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
-            z-index: 0;
+            z-index: 1;
         }
 
         .slide-container > * {
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         /* 3. Typography */
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Urbanist', sans-serif;
             color: #ffffff;
             margin: 0;
@@ -105,7 +105,8 @@
         }
 
         .tile {
-            background-color: #0f172a;
+            background-color: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(217, 255, 0, 0.1);
             border-radius: 12px;
             display: flex;
@@ -118,6 +119,7 @@
         .tile:hover {
             border-color: #d9ff00;
             transform: translateY(-10px);
+            background-color: rgba(15, 23, 42, 0.95);
         }
 
         .tile .icon {
@@ -226,16 +228,17 @@
         }
 
         .overlay {
-            background: linear-gradient(90deg, rgba(2, 6, 23, 0.9) 0%, transparent 100%);
+            background: linear-gradient(90deg, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.4) 100%);
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            z-index: 1;
         }
 
         .hero-text {
-            max-width: 800px;
+            max-width: 850px;
             position: relative;
             z-index: 2;
         }
@@ -253,158 +256,202 @@
 </head>
 <body>
 
-<div class="slide-container full-bg-image" id="slide1" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/1506105483068285692');">
+<div class="slide-container full-bg-image" id="slide1" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1280&q=80');">
     <div class="overlay"></div>
     <div class="hero-text">
         <h1>ALTOV <span>GROUP</span></h1>
-        <div style="font-size: 32px; color: #94a3b8; font-family: 'Urbanist';">Driving Industrial Order Volume and Cross-Border M&A Pipelines </div>>
-       <p style="margin-top: 30px; font-size: 22px; max-width: 700px;">
-    Engineered as the premium bridge to secure high-volume manufacturing contracts for European foundries and deliver a consistent pipeline of well-funded Chinese buyers and distressed asset deals for our European legal and strategic partners. Across advanced manufacturing, industrial technology, and new energy sectors, we turn regulatory architecture into immediate transactional certainty and immediate revenue growth.
-</p>
-    </div>
-</div>
-
-<div class="slide-container" id="slide2">
-    <div class="content-area" style="text-align: center;">
-        <h2 style="font-size: 60px; margin-bottom: 30px;">Strategic <span>Vision</span></h2>
-        <p style="font-size: 28px; max-width: 1000px; margin: 0 auto; color: #cbd5e1;">
-            We do not just consult from the sidelines; we operate as an <strong>embedded execution partner</strong>. Navigating legal and market entry barriers, we deliver bulletproof transactional certainty for European Tier-1 suppliers and global institutional investors.
+        <div style="font-size: 32px; color: #cbd5e1; font-family: 'Urbanist'; font-weight: 500; margin-bottom: 20px;">Driving Industrial Order Volume and Cross-Border M&A Pipelines</div>
+        <p style="margin-top: 30px; font-size: 20px; max-width: 750px; color: #94a3b8; line-height: 1.7;">
+            Engineered as the premium bridge to secure high-volume manufacturing contracts for European foundries and deliver a consistent pipeline of well-funded Chinese buyers and distressed asset deals for our European legal and strategic partners. Across advanced manufacturing, industrial technology, and new energy sectors, we turn regulatory architecture into immediate transactional certainty and immediate revenue growth.
         </p>
     </div>
 </div>
 
-<div class="slide-container" id="slide3">
+<div class="slide-container full-bg-image" id="slide2" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1280&q=80'); justify-content: center; align-items: center; padding: 60px;">
+    <div class="overlay" style="background: linear-gradient(135deg, rgba(2, 6, 23, 0.95) 0%, rgba(5, 10, 26, 0.85) 100%);"></div>
+    <div class="content-area" style="text-align: center; max-width: 1050px;">
+        <h2 style="font-size: 60px; margin-bottom: 30px;">Strategic <span>Vision</span></h2>
+        <p style="font-size: 26px; color: #cbd5e1; line-height: 1.8; margin: 0;">
+            We do not just consult from the sidelines; we operate as an embedded execution partner. By channeling strategic commercial <strong>orders to European factories</strong> and driving cross-border transactional <strong>mandates to our local professional partners</strong>, we turn structural complexity into immediate operational volume and bulletproof certainty for both European advanced manufacturers and global investors.
+        </p>
+    </div>
+</div>
+
+<div class="slide-container full-bg-image" id="slide3" style="background-image: url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1280&q=80'); justify-content: flex-start; align-items: flex-start; padding: 60px;">
+    <div class="overlay" style="background: linear-gradient(to bottom, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.7) 100%);"></div>
     <h2 class="slide-title">Secondary <span>Architecture</span></h2>
     <div class="content-area">
         <div class="tiled-content">
             <div class="tile" onclick="location.href='#slide4'">
-                <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
-                <h3>Distressed M&A</h3>
-                <p>Driving pre-insolvency restructuring and asset carved-outs to safeguard critical tech and high-value supply quotas.</p>
+                <div class="icon"><i class="fa-solid fa-industry"></i></div>
+                <h3>Order Volume Flow</h3>
+                <p>Directly injecting strategic <strong>manufacturing orders</strong> into European foundries to revitalize idle capacity through optimized localization paths.</p>
             </div>
+            
+            <div class="tile" onclick="location.href='#slide6'">
+                <div class="icon"><i class="fa-solid fa-briefcase-medical"></i></div>
+                <h3>Mandate Pipeline</h3>
+                <p>Delivering a consistent stream of <strong>high-value M&A mandates</strong> and restructuring cases to our local legal and strategic partners.</p>
+            </div>
+            
             <div class="tile" onclick="location.href='#slide5'">
                 <div class="icon"><i class="fa-solid fa-gavel"></i></div>
-                <h3>Regulatory Strategy</h3>
-                <p>Structuring transaction vehicles that satisfy stringent EU mandates, ensuring absolute cross-border compliance and profit containment.</p>
-            </div>
-            <div class="tile" onclick="location.href='#slide4'">
-                <div class="icon"><i class="fa-solid fa-industry"></i></div>
-                <h3>EV Supply Chain</h3>
-                <p>Re-engineering thermal management systems (TMS) and energy storage components for optimal SKD separation and localization paths.</p>
+                <h3>Regulatory Certainty</h3>
+                <p>Engineering complex frameworks to <strong>lock in profits</strong> and satisfy EU mandates, ensuring transactional certainty across all industrial sectors.</p>
             </div>
         </div>
     </div>
 </div>
-
+    
 <div class="slide-container" id="slide4">
     <h2 class="slide-title">Industrial <span>Intelligence</span></h2>
     <div class="content-area">
         <div class="two-column">
             <div>
-                <h3 style="font-size: 36px; margin-bottom: 25px;">Automotive & EV Focus</h3>
-                <p>From technical due diligence to comprehensive SKD teardown roadmaps, we handle advanced <strong>Thermal Management Systems (TMS)</strong>, battery packs, and critical new energy components.</p>
+                <h3 style="font-size: 36px; margin-bottom: 25px;">Advanced Industrial Focus</h3>
+                <p>From granular technical due diligence to comprehensive SKD teardown roadmaps, we orchestrate high-precision production strategies across <strong>advanced machinery, clean energy hardware, and next-generation industrial components</strong>.</p>
                 <ul style="margin-top: 25px; list-style: none; padding: 0;">
-                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: #d9ff00; margin-right: 15px;"></i> Optimization of European localization and sourcing</li>
-                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: #d9ff00; margin-right: 15px;"></i> Tariff-resilient market access and trade compliance</li>
-                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: #d9ff00; margin-right: 15px;"></i> End-to-end settlement oversight on crucial milestones</li>
+                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: #d9ff00; margin-right: 15px;"></i> Injecting high-yield <strong>manufacturing contracts</strong> directly into European production lines.</li>
+                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: #d9ff00; margin-right: 15px;"></i> Designing tariff-resilient supply chains tailored to EU market access mandates.</li>
+                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: #d9ff00; margin-right: 15px;"></i> Full-lifecycle <strong>settlement oversight</strong> on crucial operational milestones.</li>
                 </ul>
             </div>
             <div class="image-wrapper">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/8873053836863936178" alt="High Tech Plant">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Advanced High-Tech Smart Factory Floor">
             </div>
         </div>
     </div>
 </div>
 
-<div class="slide-container" id="slide5" style="background-image: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), url('http://googleusercontent.com/image_collection/image_retrieval/15358321862631093395'); background-size: cover;">
-    <h2 class="slide-title">Global <span>Regulatory</span> Framework</h2>
-    <div class="content-area">
-        <div class="two-column">
-            <div class="image-wrapper" style="border: none;">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/15358321862631093395" alt="Abstract Network" style="object-fit: contain;">
+<div class="slide-container" id="slide5" style="padding: 40px 60px;">
+    <h2 class="slide-title" style="margin-bottom: 25px;">Premium Sino-Industrial <span>Product Matrix</span></h2>
+    <div class="content-area" style="justify-content: flex-start;">
+        <p style="font-size: 16px; margin-bottom: 20px; color: #cbd5e1;">
+            ALTOV acts as the exclusive gateway for 20+ categories of premium Chinese hardware, routing lucrative manufacturing contracts to European foundries and cross-border mandates to our professional partners:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; width: 100%;">
+            <div style="background: #0f172a; padding: 15px; border-left: 3px solid #d9ff00; border-radius: 4px;">
+                <h4 style="color: #ffffff; margin: 0 0 10px 0; font-size: 16px;"><i class="fa-solid fa-robot" style="color: #d9ff00; margin-right: 8px;"></i>Robotics & Parts</h4>
+                <ul style="padding-left: 15px; margin: 0; font-size: 13px; color: #94a3b8; line-height: 1.5;">
+                    <li>Dextrous Robotic Hands</li>
+                    <li>Harmonic Reducers</li>
+                    <li>RV Reducers</li>
+                    <li>Frameless Torque Motors</li>
+                    <li>Collaborative Arms</li>
+                    <li>Servo Drives</li>
+                </ul>
             </div>
-            <div>
-                <h3>Bridging Europe & Asia</h3>
-                <p>By coordinating with top-tier international law firms and financial auditors, we issue highly persuasive <strong>Legal Opinions</strong>. These are not mere compliance files; they serve as strategic market-entry blueprints.</p>
-                <p style="margin-top: 20px;">
-                    Leveraging secure Cloudflare reverse-proxies and architecture, we ensure your strategic data is disseminated globally with optimal edge performance—fully aligned with EU <strong>GDPR</strong> mandates.
+            <div style="background: #0f172a; padding: 15px; border-left: 3px solid #3b82f6; border-radius: 4px;">
+                <h4 style="color: #ffffff; margin: 0 0 10px 0; font-size: 16px;"><i class="fa-solid fa-gears" style="color: #3b82f6; margin-right: 8px;"></i>Automation & Logistics</h4>
+                <ul style="padding-left: 15px; margin: 0; font-size: 13px; color: #94a3b8; line-height: 1.5;">
+                    <li>Omnidirectional AGVs/AMRs</li>
+                    <li>Intelligent AS/RS Warehousing</li>
+                    <li>Machine Vision Inspection</li>
+                    <li>High-Speed Sorting Matrix</li>
+                </ul>
+            </div>
+            <div style="background: #0f172a; padding: 15px; border-left: 3px solid #00f2fe; border-radius: 4px;">
+                <h4 style="color: #ffffff; margin: 0 0 10px 0; font-size: 16px;"><i class="fa-solid fa-bolt" style="color: #00f2fe; margin-right: 8px;"></i>Clean-Tech & ESS</h4>
+                <ul style="padding-left: 15px; margin: 0; font-size: 13px; color: #94a3b8; line-height: 1.5;">
+                    <li>Liquid-Cooled ESS</li>
+                    <li>Megawatt EV Chargers</li>
+                    <li>Solid-State Battery Cells</li>
+                    <li>High-Efficiency TMS Systems</li>
+                    <li>Microgrid Inverters (PCS)</li>
+                </ul>
+            </div>
+            <div style="background: #0f172a; padding: 15px; border-left: 3px solid #DEFF9A; border-radius: 4px;">
+                <h4 style="color: #ffffff; margin: 0 0 10px 0; font-size: 16px;"><i class="fa-solid fa-screwdriver-wrench" style="color: #DEFF9A; margin-right: 8px;"></i>Machinery & IoT</h4>
+                <ul style="padding-left: 15px; margin: 0; font-size: 13px; color: #94a3b8; line-height: 1.5;">
+                    <li>Laser Cutting Machinery</li>
+                    <li>5-Axis CNC Centers</li>
+                    <li>Metal 3D Printing Systems</li>
+                    <li>Digital Twin Controllers</li>
+                    <li>Industrial IIoT Gateways</li>
+                </ul>
+            </div>
+        </div>
+        <div style="margin-top: 25px; background: rgba(217, 255, 0, 0.05); border: 1px dashed rgba(217, 255, 0, 0.2); padding: 15px; border-radius: 6px; width: 100%; text-align: center;">
+            <span style="color: #d9ff00; font-weight: 600; font-size: 16px;">💡 VALUE PROPOSITION FOR EUROPEAN PARTNERS:</span>
+            <span style="color: #ffffff; font-size: 15px; margin-left: 10px;">We leverage this unmatched product ecosystem to feed orders to local factories and drive structural asset deals for our local networks.</span>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">Cross-Continental <span>Protection Shield</span></h2>
+    <div class="content-area">
+        <p style="font-size: 18px; color: #cbd5e1; margin-bottom: 35px; max-width: 1000px;">
+            To seamlessly scale our 20+ industrial product vectors, ALTOV engineers a bulletproof corporate defense mechanism. By systematically coordinating with elite institutional networks, we shield our European manufacturing partners and local professional networks from transactional and regulatory friction.
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; width: 100%;">
+            <div style="background: #0f172a; padding: 35px; border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 12px;">
+                <div style="color: #3b82f6; font-size: 36px; margin-bottom: 20px;"><i class="fa-solid fa-building-columns"></i></div>
+                <h3 style="font-size: 24px; margin-bottom: 15px; color: #ffffff;">Regulatory & Audit Alignment</h3>
+                <p style="font-size: 15px; color: #94a3b8; line-height: 1.6;">
+                    Synergizing with <strong>Big Four accounting networks</strong> and premier international law firms to deliver tax-optimized corporate vehicles and total cross-border legal compliance.
+                </p>
+            </div>
+            
+            <div style="background: #0f172a; padding: 35px; border: 1px solid rgba(217, 255, 0, 0.2); border-radius: 12px;">
+                <div style="color: #d9ff00; font-size: 36px; margin-bottom: 20px;"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3 style="font-size: 24px; margin-bottom: 15px; color: #ffffff;">Risk Mitigation & Insurance</h3>
+                <p style="font-size: 15px; color: #94a3b8; line-height: 1.6;">
+                    Coordinating with <strong>leading global underwriters and top-tier insurers</strong> to back our industrial pipeline with comprehensive trade credit insurance and W&I structures.
+                </p>
+            </div>
+            
+            <div style="background: #0f172a; padding: 35px; border: 1px solid rgba(0, 242, 254, 0.2); border-radius: 12px;">
+                <div style="color: #00f2fe; font-size: 36px; margin-bottom: 20px;"><i class="fa-solid fa-file-shield"></i></div>
+                <h3 style="font-size: 24px; margin-bottom: 15px; color: #ffffff;">Elite Industrial Certification</h3>
+                <p style="font-size: 15px; color: #94a3b8; line-height: 1.6;">
+                    Aligning with <strong>world-renowned third-party testing and verification bodies</strong> to guarantee that all hardware flows meet strict European CE standards and local mandates.
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="slide-container" id="slide6">
-    <h2 class="slide-title">Why <span>ALTOV</span> Group</h2>
-    <div class="content-area">
-        <div class="table-layout">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Strategic Dimension</th>
-                        <th>Legacy Consulting Firms</th>
-                        <th>ALTOV Partners</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Fee Structure</strong></td>
-                        <td>Billable hours & rigid monthly retainers</td>
-                        <td><strong>Success Fee & performance driven</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Engagement Depth</strong></td>
-                        <td>Third-party observers issuing static PDFs</td>
-                        <td><strong>Embedded partners guiding core decisions</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Execution Assurance</strong></td>
-                        <td>Limited to high-level advisory summaries</td>
-                        <td><strong>Granular master-plan tracking and implementation</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ecosystem Approach</strong></td>
-                        <td>Bureaucratic and heavy on legacy processes</td>
-                        <td><strong>Agile, highly adaptive, and outcome-focused</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
 <div class="slide-container" id="slide7">
-    <h2 class="slide-title">Execution <span>Pathway</span></h2>
+    <h2 class="slide-title">Tactical <span>Execution Pathway</span></h2>
     <div class="content-area">
         <div class="timeline-layout">
             <div class="timeline-line"></div>
+            
             <div class="timeline-item">
-                <h3 style="color: #d9ff00;">Phase 1</h3>
-                <p><strong>Ecosystem Audit</strong><br>Identifying structural bottlenecks and legal regulatory blind spots.</p>
+                <h3 style="color: #d9ff00; font-family: 'Urbanist'; font-size: 24px; margin-bottom: 15px;">01 / Audit</h3>
+                <p style="font-size: 15px; line-height: 1.6;"><strong style="color: #ffffff; display: block; margin-bottom: 8px;">Capacity Diagnostic</strong>Conducting rapid operational due diligence to pinpoint factory floor bottlenecks and map unutilized capacity across local manufacturing lines.</p>
             </div>
+            
             <div class="timeline-item">
-                <h3 style="color: #d9ff00;">Phase 2</h3>
-                <p><strong>Architecture Modeling</strong><br>Designing secure, tariff-resilient transaction and legal vehicles.</p>
+                <h3 style="color: #d9ff00; font-family: 'Urbanist'; font-size: 24px; margin-bottom: 15px;">02 / Structuring</h3>
+                <p style="font-size: 15px; line-height: 1.6;"><strong style="color: #ffffff; display: block; margin-bottom: 8px;">Regulatory Engineering</strong>Drafting localized supplementary settlement agreements and securing transaction-level structural approval from Big Four tax experts.</p>
             </div>
+            
             <div class="timeline-item">
-                <h3 style="color: #d9ff00;">Phase 3</h3>
-                <p><strong>Deal Execution</strong><br>Securing target asset pools and final transactional settlement.</p>
+                <h3 style="color: #d9ff00; font-family: 'Urbanist'; font-size: 24px; margin-bottom: 15px;">03 / Injection</h3>
+                <p style="font-size: 15px; line-height: 1.6;"><strong style="color: #ffffff; display: block; margin-bottom: 8px;">Order Injection</strong>Deploying high-volume manufacturing sub-contracts backed by Tier-1 trade credit insurance and initiating component import-export flows.</p>
             </div>
+            
             <div class="timeline-item">
-                <h3 style="color: #d9ff00;">Phase 4</h3>
-                <p><strong>Value Scale-up</strong><br>Driving localization and realizing premium equity appreciation.</p>
+                <h3 style="color: #d9ff00; font-family: 'Urbanist'; font-size: 24px; margin-bottom: 15px;">04 / Realization</h3>
+                <p style="font-size: 15px; line-height: 1.6;"><strong style="color: #ffffff; display: block; margin-bottom: 8px;">Yield Lock-in</strong>Optimizing cross-continental supply chains, scaling plant output, and triggering milestone-based success fee distributions for strategic partners.</p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="slide-container" id="slide8" style="background-image: linear-gradient(rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.9)), url('http://googleusercontent.com/image_collection/image_retrieval/11579333403416394925'); background-size: cover;">
+<div class="slide-container full-bg-image" id="slide8" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1280&q=80');">
+    <div class="overlay" style="background: linear-gradient(rgba(2, 6, 23, 0.93), rgba(2, 6, 23, 0.93));"></div>
     <div class="content-area" style="text-align: center;">
-        <h2 style="font-size: 80px; margin-bottom: 20px;">Connect with <span>Us</span></h2>
-        <p style="font-size: 24px; color: #94a3b8;"> Munich | Brussels | Beijing | Hong Kong </p>
+        <h2 style="font-size: 80px; margin-bottom: 20px; font-family: 'Urbanist'; font-weight: 700;">Connect with <span>Us</span></h2>
+        <p style="font-size: 24px; color: #94a3b8; letter-spacing: 1px;"> Munich | Beijing | Hong Kong </p>
         <div style="margin-top: 50px; border-top: 1px solid rgba(217, 255, 0, 0.3); padding-top: 40px;">
-            <div style="font-size: 42px; color: #d9ff00; font-family: 'Urbanist'; font-weight: 700;">partner@altov-group.com</div>
-            <p style="margin-top: 20px; font-style: italic;">
+            <div style="font-size: 42px; color: #d9ff00; font-family: 'Urbanist'; font-weight: 700; letter-spacing: -0.5px;">
+                <a href="mailto:info@altov-group.com" style="color: #d9ff00; text-decoration: none;">info@altov-group.com</a>
+            </div>
+            <p style="margin-top: 25px; font-style: italic; color: #cbd5e1; font-size: 20px;">
                 "Professional, Firm, and Success-Driven."
             </p>
         </div>
