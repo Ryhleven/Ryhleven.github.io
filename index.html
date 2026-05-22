@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALTOV | Cross-Border Supply Chain Infrastructure & Compliance Gateway</title>
+    <style>
+        :root {
+            --primary-color: #0A192F;      /* 德国老钱投行深蓝 */
+            --secondary-color: #172A45;    /* 模块背景冷灰蓝 */
+            --accent-color: #64FFDA;       /* 技术安全极光绿 */
+            --text-main: #E6F1FF;          /* 高对比白 */
+            --text-muted: #8892B0;         /* 工业冷灰 */
+            --body-bg: #020C1B;            /* 纯净黑底 */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--body-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航与资信头 */
+        header {
+            border-bottom: 1px solid var(--secondary-color);
+            padding-bottom: 30px;
+            margin-bottom: 50px;
+        }
+
+        .logo-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--text-main);
+        }
+
+        .brand span {
+            color: var(--accent-color);
+        }
+
+        .status-tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 4px 10px;
+            border-radius: 2px;
+        }
+
+        /* 核心宣言宣言 */
+        .hero-section {
+            margin-bottom: 60px;
+        }
+
+        .hero-section h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 700px;
+        }
+
+        /* 核心业务网格 */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .card {
+            background-color: var(--secondary-color);
+            border-left: 4px solid var(--text-muted);
+            padding: 30px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-left-color: var(--accent-color);
+            transform: translateX(5px);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .card ul {
+            margin-top: 15px;
+            list-style: none;
+        }
+
+        .card ul li {
+            font-size: 14px;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* 资信底盘与免责声明 */
+        footer {
+            margin-top: 80px;
+            border-top: 1px solid var(--secondary-color);
+            padding-top: 40px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .legal-notice h4 {
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+        }
+
+        .contact-info strong {
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo-area">
+            <div class="brand">ALTOV<span>.</span></div>
+            <div class="status-tag">Institutional Grade Only</div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <h1>Eurasian Industrial Localization & Regulatory Gateway.</h1>
+        <p>We provide institutional-grade solutions for advanced manufacturing enterprises navigating the complexities of European regulatory barriers, data governance, and strategic asset restructuring.</p>
+    </section>
+
+    <main class="grid">
+        <div class="card">
+            <h3>Regulatory Access & Verification</h3>
+            <p>Direct, uncompromised pathways to secure critical European market access without relying on non-compliant, third-party paper consulting.</p>
+            <ul>
+                <li><strong>CE & RoHS Sovereign Assurance:</strong> Comprehensive technical file restructuring to meet rigorous EU standards for digital product passports.</li>
+                <li><strong>Technical Audit Preparation:</strong> Pre-audit verification for European notified bodies and high-level regulatory scrutiny.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Sovereign Localization & Substantive Value-Add</h3>
+            <p>De-risking geopolitical decoupling through authentic, legally bulletproof European operational restructuring.</p>
+            <ul>
+                <li><strong>Substantive Assembly & R&D Setup:</strong> Engineering operational presence in Europe that strictly aligns with EU rules of origin.</li>
+                <li><strong>Local Added-Value (LAV) Optimization:</strong> Designing verifiable 45%+ local processing architectures to bulletproof your market position.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Integrated Supply Chain Infrastructure</h3>
+            <p>Physical and data-decoupled logistics architecture designed for high-value components and smart hardware.</p>
+            <ul>
+                <li><strong>Compliant Logistics & Customs Settlement:</strong> Secure, transparent customs clearing paths avoiding anti-circumvention audits.</li>
+                <li><strong>Bespoke Warehouse Management:</strong> Secure European warehousing, fulfillment, and strict chain-of-custody data logging.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Strategic M&A & Distressed Asset Advisory</h3>
+            <p>Boutique investment banking solutions targeting European industrial assets and insolvent manufacturing firms.</p>
+            <ul>
+                <li><strong>Insolvent Firm Acquisition (M&A):</strong> Sourcing and structuring the purchase of distressed European engineering and industrial groups.</li>
+                <li><strong>Cross-Border Asset Insulation:</strong> Legal and商法 mechanism insulation to protect technological intellectual property.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="legal-notice">
+                <h4>Legal Notice & Disclaimer (Impressum)</h4>
+                <p>ALTOV operates as an independent, private boutique advisory framework. All advisory engagement is executed strictly on a non-public, project-by-project basis. We strictly adhere to GDPR compliance mandates. This digital asset serves exclusively as a corporate credentials verification registry for institutional partners and qualified manufacturers.</p>
+            </div>
+            <div class="contact-info">
+                <h4>Communications</h4>
+                <p><strong>Secured Routing:</strong> info@altov-shield.com</p>
+                <p><strong>Operational Desk:</strong> Private Ledger Access Only</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
