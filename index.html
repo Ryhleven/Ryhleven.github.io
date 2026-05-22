@@ -3,251 +3,412 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALTOV | Cross-Border Supply Chain Infrastructure & Compliance Gateway</title>
+    <title>ALTOV Group | Strategic Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght=400;500;700&family=Inter:wght=300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #0A192F;      /* 德国老钱投行深蓝 */
-            --secondary-color: #172A45;    /* 模块背景冷灰蓝 */
-            --accent-color: #64FFDA;       /* 技术安全极光绿 */
-            --text-main: #E6F1FF;          /* 高对比白 */
-            --text-muted: #8892B0;         /* 工业冷灰 */
-            --body-bg: #020C1B;            /* 纯净黑底 */
-        }
-
+        /* 1. 全局样式设置 */
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--body-bg);
-            color: var(--text-main);
+            background-color: #050a1a;
+            display: grid;
+            gap: 30px;
+            grid-template-columns: 1fr;
+            margin: 0;
+            min-height: 100vh;
+            padding: 40px 0;
+            place-items: center;
+        }
+
+        /* 2. 幻灯片容器 - 严格遵守 1280x720 */
+        .slide-container {
+            align-items: center;
+            background-color: #020617;
+            border-radius: 4px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            height: 720px;
+            justify-content: center;
+            overflow: hidden;
+            padding: 60px;
+            position: relative;
+            width: 1280px;
+        }
+
+        /* 背景装饰：流动的线条与光影 */
+        .slide-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 10% 10%, rgba(217, 255, 0, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 90% 90%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .slide-container > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 3. 字体与文字排版 */
+        h1, h2, h3 {
+            font-family: 'Urbanist', sans-serif;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .slide-title {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: left;
+            width: 100%;
+            color: #DAFFDE;
+            letter-spacing: -1px;
+        }
+
+        p, li, td, th {
+            color: #94a3b8;
+            font-size: 18px;
             line-height: 1.6;
-            padding: 40px 20px;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
+        strong {
+            color: #d9ff00; /* 亮黄色强调 */
         }
 
-        /* 顶部导航与资信头 */
-        header {
-            border-bottom: 1px solid var(--secondary-color);
-            padding-bottom: 30px;
-            margin-bottom: 50px;
+        /* 4. 布局样式定义 */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: center;
+            width: 100%;
         }
 
-        .logo-area {
+        /* 磁贴链接（二级架构核心） */
+        .tiled-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 100%;
+        }
+
+        .tile {
+            background-color: #0f172a;
+            border: 1px solid rgba(217, 255, 0, 0.1);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tile:hover {
+            border-color: #d9ff00;
+            transform: translateY(-10px);
+        }
+
+        .tile .icon {
+            color: #d9ff00;
+            font-size: 44px;
+            margin-bottom: 25px;
+        }
+
+        .tile h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        /* 左右布局 */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .image-wrapper {
+            border-radius: 8px;
+            height: 420px;
+            overflow: hidden;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .image-wrapper img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        /* 表格样式 */
+        .table-layout {
+            width: 100%;
+            background: #0f172a;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 24px;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgba(217, 255, 0, 0.05);
+            color: #d9ff00;
+            font-size: 20px;
+        }
+
+        /* 时间轴 */
+        .timeline-layout {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: var(--text-main);
-        }
-
-        .brand span {
-            color: var(--accent-color);
-        }
-
-        .status-tag {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-color);
-            border: 1px solid var(--accent-color);
-            padding: 4px 10px;
-            border-radius: 2px;
-        }
-
-        /* 核心宣言宣言 */
-        .hero-section {
-            margin-bottom: 60px;
-        }
-
-        .hero-section h1 {
-            font-size: 42px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: var(--text-main);
-        }
-
-        .hero-section p {
-            font-size: 18px;
-            color: var(--text-muted);
-            max-width: 700px;
-        }
-
-        /* 核心业务网格 */
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            margin-bottom: 60px;
-        }
-
-        @media (min-width: 768px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .card {
-            background-color: var(--secondary-color);
-            border-left: 4px solid var(--text-muted);
-            padding: 30px;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            border-left-color: var(--accent-color);
-            transform: translateX(5px);
-        }
-
-        .card h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        .card ul {
-            margin-top: 15px;
-            list-style: none;
-        }
-
-        .card ul li {
-            font-size: 14px;
-            color: var(--text-main);
-            margin-bottom: 8px;
-            padding-left: 15px;
             position: relative;
+            width: 100%;
+            padding-top: 50px;
         }
 
-        .card ul li::before {
-            content: "▪";
-            position: absolute;
+        .timeline-line {
+            background-color: rgba(255, 255, 255, 0.1);
+            height: 2px;
             left: 0;
-            color: var(--accent-color);
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            z-index: 0;
         }
 
-        /* 资信底盘与免责声明 */
-        footer {
-            margin-top: 80px;
-            border-top: 1px solid var(--secondary-color);
-            padding-top: 40px;
-            font-size: 13px;
-            color: var(--text-muted);
+        .timeline-item {
+            background: #020617;
+            position: relative;
+            width: 22%;
+            z-index: 1;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
+        .timeline-item::before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            background: #d9ff00;
+            border-radius: 50%;
+            position: absolute;
+            top: -8px;
+            left: 0;
         }
 
-        @media (min-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 2fr 1fr;
-            }
+        /* 标题页全背景 */
+        .full-bg-image {
+            background-size: cover;
+            background-position: center;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding: 80px;
         }
 
-        .legal-notice h4 {
-            color: var(--text-main);
-            margin-bottom: 10px;
+        .overlay {
+            background: linear-gradient(90deg, rgba(2, 6, 23, 0.9) 0%, transparent 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
-        .contact-info p {
-            margin-bottom: 8px;
+        .hero-text {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
         }
 
-        .contact-info strong {
-            color: var(--text-main);
+        .hero-text h1 {
+            font-size: 84px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-text span {
+            color: #d9ff00;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <div class="logo-area">
-            <div class="brand">ALTOV<span>.</span></div>
-            <div class="status-tag">Institutional Grade Only</div>
-        </div>
-    </header>
+<div class="slide-container full-bg-image" id="slide1" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/1506105483068285692');">
+    <div class="overlay"></div>
+    <div class="hero-text">
+        <h1>ALTOV <span>GROUP</span></h1>
+        <div style="font-size: 32px; color: #94a3b8; font-family: 'Urbanist';">Architecting Value in Cross-Border Complexity</div>
+        <p style="margin-top: 30px; font-size: 22px; max-width: 600px;">
+            专注于欧洲汽车工业与新能源产业链的跨境并购、供应链重组及监管架构设计。
+        </p>
+    </div>
+</div>
 
-    <section class="hero-section">
-        <h1>Eurasian Industrial Localization & Regulatory Gateway.</h1>
-        <p>We provide institutional-grade solutions for advanced manufacturing enterprises navigating the complexities of European regulatory barriers, data governance, and strategic asset restructuring.</p>
-    </section>
+<div class="slide-container" id="slide2">
+    <div class="content-area" style="text-align: center;">
+        <h2 style="font-size: 60px; margin-bottom: 30px;">Strategic <span>Vision</span></h2>
+        <p style="font-size: 28px; max-width: 1000px; margin: 0 auto; color: #cbd5e1;">
+            我们不仅是咨询者，更是<strong>执行合伙人</strong>。在复杂的法律与市场壁垒中，为欧洲 Tier-1 供应商与全球资本构建最具确定性的闭环路径。
+        </p>
+    </div>
+</div>
 
-    <main class="grid">
-        <div class="card">
-            <h3>Regulatory Access & Verification</h3>
-            <p>Direct, uncompromised pathways to secure critical European market access without relying on non-compliant, third-party paper consulting.</p>
-            <ul>
-                <li><strong>CE & RoHS Sovereign Assurance:</strong> Comprehensive technical file restructuring to meet rigorous EU standards for digital product passports.</li>
-                <li><strong>Technical Audit Preparation:</strong> Pre-audit verification for European notified bodies and high-level regulatory scrutiny.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Sovereign Localization & Substantive Value-Add</h3>
-            <p>De-risking geopolitical decoupling through authentic, legally bulletproof European operational restructuring.</p>
-            <ul>
-                <li><strong>Substantive Assembly & R&D Setup:</strong> Engineering operational presence in Europe that strictly aligns with EU rules of origin.</li>
-                <li><strong>Local Added-Value (LAV) Optimization:</strong> Designing verifiable 45%+ local processing architectures to bulletproof your market position.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Integrated Supply Chain Infrastructure</h3>
-            <p>Physical and data-decoupled logistics architecture designed for high-value components and smart hardware.</p>
-            <ul>
-                <li><strong>Compliant Logistics & Customs Settlement:</strong> Secure, transparent customs clearing paths avoiding anti-circumvention audits.</li>
-                <li><strong>Bespoke Warehouse Management:</strong> Secure European warehousing, fulfillment, and strict chain-of-custody data logging.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Strategic M&A & Distressed Asset Advisory</h3>
-            <p>Boutique investment banking solutions targeting European industrial assets and insolvent manufacturing firms.</p>
-            <ul>
-                <li><strong>Insolvent Firm Acquisition (M&A):</strong> Sourcing and structuring the purchase of distressed European engineering and industrial groups.</li>
-                <li><strong>Cross-Border Asset Insulation:</strong> Legal and商法 mechanism insulation to protect technological intellectual property.</li>
-            </ul>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="legal-notice">
-                <h4>Legal Notice & Disclaimer (Impressum)</h4>
-                <p>ALTOV operates as an independent, private boutique advisory framework. All advisory engagement is executed strictly on a non-public, project-by-project basis. We strictly adhere to GDPR compliance mandates. This digital asset serves exclusively as a corporate credentials verification registry for institutional partners and qualified manufacturers.</p>
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">Secondary <span>Architecture</span></h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile" onclick="location.href='#slide4'">
+                <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
+                <h3>Distressed M&A</h3>
+                <p>深度参与欧洲破产预防与资产重组，锁定核心技术资产与优质供应份额。</p>
             </div>
-            <div class="contact-info">
-                <h4>Communications</h4>
-                <p><strong>Secured Routing:</strong> info@altov-shield.com</p>
-                <p><strong>Operational Desk:</strong> Private Ledger Access Only</p>
+            <div class="tile" onclick="location.href='#slide5'">
+                <div class="icon"><i class="fa-solid fa-gavel"></i></div>
+                <h3>Regulatory</h3>
+                <p>构建符合欧盟合规要求的数字化交易架构，确保跨境合规与利润锁死。</p>
+            </div>
+            <div class="tile" onclick="location.href='#slide4'">
+                <div class="icon"><i class="fa-solid fa-industry"></i></div>
+                <h3>EV Supply Chain</h3>
+                <p>重构热管理系统与电池组件供应链，实现 SKD 分离与本地化最优路径。</p>
             </div>
         </div>
-    </footer>
+    </div>
+</div>
+
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">Industrial <span>Intelligence</span></h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3 style="font-size: 36px; margin-bottom: 25px;">Automotive & EV Focus</h3>
+                <p>针对汽车<strong>热管理系统 (TMS)</strong>、储能电池及新能源核心组件，我们提供从技术尽调到 SKD 拆解方案的全过程计划。</p>
+                <ul style="margin-top: 25px; list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: #d9ff00; margin-right: 15px;"></i> 欧洲本地化采购策略优化</li>
+                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: #d9ff00; margin-right: 15px;"></i> 针对欧盟关税政策的准入设计</li>
+                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: #d9ff00; margin-right: 15px;"></i> 关键节点 Settlement 落地监控</li>
+                </ul>
+            </div>
+            <div class="image-wrapper">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/8873053836863936178" alt="High Tech Plant">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide5" style="background-image: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), url('http://googleusercontent.com/image_collection/image_retrieval/15358321862631093395'); background-size: cover;">
+    <h2 class="slide-title">Global <span>Regulatory</span> Framework</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="image-wrapper" style="border: none;">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/15358321862631093395" alt="Abstract Network" style="object-fit: contain;">
+            </div>
+            <div>
+                <h3>Bridging Europe & China</h3>
+                <p>我们整合顶级律师事务所与财务审计资源，输出极具商业穿透力的<strong>法律意见书</strong>。这不仅是合规文件，更是您业务拓展的敲门砖。</p>
+                <p style="margin-top: 20px;">
+                    通过 Cloudflare 代理与 GitHub 托管，确保您的战略数据在符合 <strong>GDPR</strong> 的前提下，实现全球最优节点的安全分发。
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">Why <span>ALTOV</span> Group</h2>
+    <div class="content-area">
+        <div class="table-layout">
+            <table>
+                <thead>
+                    <tr>
+                        <th>维度</th>
+                        <th>传统咨询机构</th>
+                        <th>ALTOV 战略执行</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>费用逻辑</strong></td>
+                        <td>基于工时与月度 Retainer</td>
+                        <td><strong>成功费 (Success Fee) 导向</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>参与深度</strong></td>
+                        <td>第三方观察与报告输出</td>
+                        <td><strong>嵌入式合伙人决策</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>执行保障</strong></td>
+                        <td>仅提供建议书</td>
+                        <td><strong>全过程计划落地监控</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>生态定位</strong></td>
+                        <td>国企风格/官僚依赖</td>
+                        <td><strong>去烙印化/现代实干派</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide7">
+    <h2 class="slide-title">Execution <span>Pathway</span></h2>
+    <div class="content-area">
+        <div class="timeline-layout">
+            <div class="timeline-line"></div>
+            <div class="timeline-item">
+                <h3 style="color: #d9ff00;">Phase 1</h3>
+                <p><strong>底层架构扫描</strong><br>识别供应链断点与合规漏洞。</p>
+            </div>
+            <div class="timeline-item">
+                <h3 style="color: #d9ff00;">Phase 2</h3>
+                <p><strong>方案建模</strong><br>设计锁死利润的法律架构方案。</p>
+            </div>
+            <div class="timeline-item">
+                <h3 style="color: #d9ff00;">Phase 3</h3>
+                <p><strong>交易执行</strong><br>锁定资产包并完成并购 Settlement。</p>
+            </div>
+            <div class="timeline-item">
+                <h3 style="color: #d9ff00;">Phase 4</h3>
+                <p><strong>价值放大</strong><br>本地化运营与资本溢价变现。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide8" style="background-image: linear-gradient(rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.9)), url('http://googleusercontent.com/image_collection/image_retrieval/11579333403416394925'); background-size: cover;">
+    <div class="content-area" style="text-align: center;">
+        <h2 style="font-size: 80px; margin-bottom: 20px;">Connect with <span>Us</span></h2>
+        <p style="font-size: 24px; color: #94a3b8;"> Munich | Brussels | Beijing | Hong Kong </p>
+        <div style="margin-top: 50px; border-top: 1px solid rgba(217, 255, 0, 0.3); padding-top: 40px;">
+            <div style="font-size: 42px; color: #d9ff00; font-family: 'Urbanist'; font-weight: 700;">partner@altov-group.com</div>
+            <p style="margin-top: 20px; font-style: italic;">
+                "Professional, Firm, and Success-Driven."
+            </p>
+        </div>
+    </div>
 </div>
 
 </body>
