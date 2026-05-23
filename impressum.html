@@ -1,32 +1,211 @@
-LEGAL NOTICE / IMPRESSUM
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Notice (Impressum) - ALTOV Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-Website: altov-group.com
-Parent Corporate Entity: RECONSTRUCTION ELEMENTS UNITED GROUP LIMITED (要素重建聯合集團有限公司)
-Jurisdiction of Incorporation: Hong Kong SAR
+        body {
+            background-color: #020617; /* 延续第8页的暗夜蓝深色底 */
+            color: #cbd5e1; /* 钛金灰正文色，确保长文本阅读不刺眼 */
+            font-family: 'Urbanist', system-ui, -apple-system, sans-serif;
+            line-height: 1.8;
+            padding: 80px 20px;
+        }
 
-Information required pursuant to § 5 of the German Digital Services Act (Digitale-Dienste-Gesetz - DDG) and applicable European e-commerce regulations.
+        /* 限制法律文本的阅读视窗，确保大屏下不会散开 */
+        .legal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(30, 41, 59, 0.4); /* 半透明深色卡片包裹 */
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 50px 60px;
+            backdrop-filter: blur(10px);
+        }
 
-1. Corporate Information & Identification
-The platform altov-group.com and the operational initiative known as ALTOV are owned, maintained, and operated globally by the parent corporate legal entity:
-Company Name: RECONSTRUCTION ELEMENTS UNITED GROUP LIMITED (要素重建聯合集團有限公司)
-Legal Form: Private Company Limited by Shares (incorporated under the Laws of Hong Kong SAR)
-Business Registration Certificate No.: 75742415-000-09-23-4
-Registered Corporate Office Address: Office No. 6 on 12 Floor, Wealth Commercial Centre, No. 48 Kwong Wa Street, KL, Hong Kong SAR
+        /* 顶部面包屑/返回主页导航 */
+        .back-nav {
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+        .back-nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .back-nav a:hover {
+            color: #d9ff00;
+        }
 
-2. Authorized Representatives
-Managing Director & Chief Executive Officer: Ryan Xu
-Authorized Legal Representative: Ryan Xu
+        /* 页面大标题 */
+        h1 {
+            font-size: 48px;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
 
-3. Direct Contact Channels
-For immediate, direct, and official communication regarding technical, commercial, or regulatory compliance matters, please utilize the following dedicated channels:
-Electronic Mail (Email): admin@altov-group.com
-Primary Corporate Domain: https://altov-group.com
+        /* 副标题/元信息栏 */
+        .meta-bar {
+            font-size: 16px;
+            color: #94a3b8;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(217, 255, 0, 0.15); /* 标志性的高光绿细分界线 */
+        }
 
-4. Liability for Online Content (Haftung für Inhalte)
-As a service provider under global digital standards and European law, we are responsible for our own content on these web pages according to statutory regulations. However, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances indicating illegal activity. Obligations to remove or block the use of information in accordance with general statutory laws remain unaffected. Any liability in this regard is only possible from the time of concrete knowledge of a specific legal infringement. Upon notification of such violations, we will remove the offending content immediately.
+        /* 核心实体卡片（亮出香港主体，强化背书） */
+        .entity-box {
+            background: rgba(217, 255, 0, 0.03);
+            border-left: 4px solid #d9ff00;
+            padding: 25px 30px;
+            margin-bottom: 45px;
+            border-radius: 0 8px 8px 0;
+        }
+        .entity-box p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .entity-box p:last-child {
+            margin-bottom: 0;
+        }
+        .entity-highlight {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 18px !important;
+        }
 
-5. Liability for External Links (Haftung für Links)
-Our online platform contains links to external, third-party websites over whose technical design and content we have absolutely no control. Therefore, we cannot accept any liability or guarantee for this external content. The respective provider or operator of the linked pages is invariably responsible for their own content. The linked pages were thoroughly checked for potential legal violations at the time the link was established, and no illegal content was identifiable. Permanent monitoring of the content of linked pages is unreasonable without concrete evidence of a legal violation. Upon receipt of notifications concerning legal infringements, such external links will be purged immediately.
+        /* 条款分章标题 */
+        h2 {
+            font-size: 22px;
+            color: #ffffff;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            letter-spacing: 0.3px;
+        }
 
-6. Intellectual Property & Copyright Notice (Urheberrecht)
-The content, layouts, source codes, graphics, industrial design assets, and texts created by the site operators on altov-group.com are strictly subject to applicable international copyright and industrial property laws. The reproduction, processing, distribution, and any kind of exploitation outside the boundaries of copyright law require the explicit, prior written consent of RECONSTRUCTION ELEMENTS UNITED GROUP LIMITED. Downloads and copies of this site are permitted solely for private, non-commercial use. Insofar as content on this site was not created by the operator, the copyrights of third parties are fully respected and identified as such. Should you become aware of a copyright infringement, please notify us via admin@altov-group.com.
+        /* 条款内文排版 */
+        p {
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            text-align: justify; /* 两端对齐，展现法律文本的严谨度 */
+        }
+
+        /* 链接样式优化 */
+        a {
+            color: #d9ff00;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+        a:hover {
+            opacity: 0.8;
+        }
+
+        /* 极简底部声明 */
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* 移动端视网膜屏适配优化 */
+        @media (max-width: 768px) {
+            body {
+                padding: 40px 15px;
+            }
+            .legal-container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="legal-container">
+        
+        <nav class="back-nav">
+            <a href="/">&larr; Back to Global Homepage</a>
+        </nav>
+        
+        <h1>Legal Notice / Impressum</h1>
+        <div class="meta-bar">
+            Official Regulatory Disclosure &nbsp;|&nbsp; altov-group.com
+        </div>
+
+        <p style="font-style: italic; color: #94a3b8; font-size: 15px; margin-bottom: 35px;">
+            Information required pursuant to § 5 of the German Digital Services Act (Digitale-Dienste-Gesetz - DDG) and applicable European e-commerce regulations.
+        </p>
+
+        <div class="entity-box">
+            <p class="entity-highlight">RECONSTRUCTION ELEMENTS UNITED GROUP LIMITED</p>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 15px;">要素重建聯合集團有限公司</p>
+            <p><strong>Jurisdiction of Incorporation:</strong> Hong Kong SAR</p>
+            <p><strong>Business Registration Certificate No.:</strong> 75742415-000-09-23-4</p>
+            <p><strong>Registered Corporate Office Address:</strong> Office No. 6 on 12 Floor, Wealth Commercial Centre, No. 48 Kwong Wa Street, KL, Hong Kong SAR</p>
+        </div>
+
+        <h2>1. Corporate Information & Identification</h2>
+        <p>
+            The platform <span style="color: #ffffff; font-weight: 400;">altov-group.com</span> and the operational initiative known as <span style="color: #d9ff00; font-weight: 500;">ALTOV</span> are owned, maintained, and operated globally by the parent corporate legal entity: <strong>RECONSTRUCTION ELEMENTS UNITED GROUP LIMITED</strong> (要素重建聯合集團有限公司), a Private Company Limited by Shares incorporated under the Laws of Hong Kong SAR.
+        </p>
+
+        <h2>2. Authorized Representatives</h2>
+        <p>
+            <strong>Managing Director & Chief Executive Officer:</strong> Ryan Xu<br>
+            <strong>Authorized Legal Representative:</strong> Ryan Xu
+        </p>
+
+        <h2>3. Direct Contact Channels</h2>
+        <p>
+            For immediate, direct, and official communication regarding technical, commercial, or regulatory compliance matters, please utilize the following dedicated channels:
+        </p>
+        <p style="padding-left: 15px; border-left: 2px solid rgba(255,255,255,0.1);">
+            <strong>Electronic Mail (Email):</strong> <a href="mailto:admin@altov-group.com">admin@altov-group.com</a><br>
+            <strong>Primary Corporate Domain:</strong> <a href="https://altov-group.com" target="_blank">https://altov-group.com</a>
+        </p>
+
+        <h2>4. Liability for Online Content (Haftung für Inhalte)</h2>
+        <p>
+            As a service provider under global digital standards and European law, we are responsible for our own content on these web pages according to statutory regulations. However, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances indicating illegal activity. Obligations to remove or block the use of information in accordance with general statutory laws remain unaffected. Any liability in this regard is only possible from the time of concrete knowledge of a specific legal infringement. Upon notification of such violations, we will remove the offending content immediately.
+        </p>
+
+        <h2>5. Liability for External Links (Haftung für Links)</h2>
+        <p>
+            Our online platform contains links to external, third-party websites over whose technical design and content we have absolutely no control. Therefore, we cannot accept any liability or guarantee for this external content. The respective provider or operator of the linked pages is invariably responsible for their own content. The linked pages were thoroughly checked for potential legal violations at the time the link was established, and no illegal content was identifiable. Permanent monitoring of the content of linked pages is unreasonable without concrete evidence of a legal violation. Upon receipt of notifications concerning legal infringements, such external links will be purged immediately.
+        </p>
+
+        <h2>6. Intellectual Property & Copyright Notice (Urheberrecht)</h2>
+        <p>
+            The content, layouts, source codes, graphics, industrial design assets, and texts created by the site operators on altov-group.com are strictly subject to applicable international copyright and industrial property laws. The reproduction, processing, distribution, and any kind of exploitation outside the boundaries of copyright law require the explicit, prior written consent of RECONSTRUCTION ELEMENTS UNITED GROUP LIMITED. Downloads and copies of this site are permitted solely for private, non-commercial use. Insofar as content on this site was not created by the operator, the copyrights of third parties are fully respected and identified as such. Should you become aware of a copyright infringement, please notify us via admin@altov-group.com.
+        </p>
+
+        <footer>
+            © 2026 ALTOV Group. All Rights Reserved. &nbsp;|&nbsp; Regulatory Compliance Framework
+        </footer>
+
+    </div>
+
+</body>
+</html>
